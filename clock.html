@@ -12,6 +12,11 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      overflow: hidden;
+    }
+    .container {
+      position: relative;
+      z-index: 10;
     }
     .clock {
       font-family: 'Quicksand', sans-serif;
@@ -24,10 +29,41 @@
       letter-spacing: 0.2em;
       text-align: center;
     }
+    .flower {
+      position: absolute;
+      font-size: 3rem;
+      animation: rotate 10s linear infinite;
+      opacity: 0.7;
+    }
+    .flower:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+    .flower:nth-child(2) { top: 20%; right: 10%; animation-delay: -2s; }
+    .flower:nth-child(3) { bottom: 15%; left: 20%; animation-delay: -4s; }
+    .flower:nth-child(4) { bottom: 25%; right: 15%; animation-delay: -6s; }
+    .flower:nth-child(5) { top: 50%; left: 5%; animation-delay: -8s; }
+    .flower:nth-child(6) { top: 60%; right: 8%; animation-delay: -1s; }
+    .flower:nth-child(7) { top: 80%; left: 50%; animation-delay: -3s; }
+    .flower:nth-child(8) { top: 30%; left: 80%; animation-delay: -5s; }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.2); }
+      to { transform: rotate(360deg) scale(1); }
+    }
   </style>
 </head>
 <body>
-  <div class="clock" id="clock"></div>
+  <!-- 回転する花たち -->
+  <div class="flower">🌸</div>
+  <div class="flower">🌻</div>
+  <div class="flower">🌷</div>
+  <div class="flower">🌹</div>
+  <div class="flower">🌼</div>
+  <div class="flower">🌵</div>
+  <div class="flower">🌸</div>
+
+  <div class="container">
+    <div class="clock" id="clock"></div>
+  </div>
   <script>
     function updateClock() {
       const now = new Date();
