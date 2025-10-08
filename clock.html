@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>スタイリッシュ時計</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .clock {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 6rem;
+      color: #fff;
+      background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+      border-radius: 2rem;
+      padding: 2rem 4rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      letter-spacing: 0.2em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock" id="clock"></div>
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
