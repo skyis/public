@@ -6,7 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
-      background: #222;
+      background: #2222222d;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -20,7 +20,7 @@
     }
     .clock {
       font-family: 'Quicksand', sans-serif;
-      font-size: 6rem;
+      font-size: 8rem;
       color: #fff;
       background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
       border-radius: 2rem;
@@ -31,18 +31,18 @@
     }
     .flower {
       position: absolute;
-      font-size: 3rem;
+      font-size: 6rem;
       animation: rotate 10s linear infinite;
       opacity: 0.7;
+      z-index: 12;
     }
     .flower:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
     .flower:nth-child(2) { top: 20%; right: 10%; animation-delay: -2s; }
     .flower:nth-child(3) { bottom: 15%; left: 20%; animation-delay: -4s; }
-    .flower:nth-child(4) { bottom: 25%; right: 15%; animation-delay: -6s; }
+    .flower:nth-child(4) { bottom: 60%; right: 25%; animation-delay: -6s; }
     .flower:nth-child(5) { top: 50%; left: 5%; animation-delay: -8s; }
     .flower:nth-child(6) { top: 60%; right: 8%; animation-delay: -1s; }
     .flower:nth-child(7) { top: 80%; left: 50%; animation-delay: -3s; }
-    .flower:nth-child(8) { top: 30%; left: 80%; animation-delay: -5s; }
 
     @keyframes rotate {
       from { transform: rotate(0deg) scale(1); }
